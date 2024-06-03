@@ -1,0 +1,23 @@
+meta {
+  name: Update employer profile
+  type: http
+  seq: 2
+}
+
+patch {
+  url: http://localhost:3000/incluwork/employers
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjFkN2E3ODY2ZTJhNTY2ZjI0ZjQ4MjMiLCJpYXQiOjE3MTMyMTQ3NTN9.0XLoacnctDfa64kb6P2hn4ZwvZ2Ny85eayT3PTUtpuU
+}
+
+body:json {
+  {
+    
+    "companyName": "Test12345",
+    "companyProfile": "test123 company profile "
+  }
+}

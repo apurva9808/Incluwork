@@ -1,0 +1,15 @@
+meta {
+  name: Get job by jobId
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:3000/incluwork/joblistings/661f234d7149f5e437645622
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjFmMDU4OTVjN2ZhMmMwMWViYzkwMzUiLCJpYXQiOjE3MTMzMDkwNjV9.98RK1_N8qfKWlB8bYxV1WVc_k9e17_E5gvpK4rJ3CR0
+}

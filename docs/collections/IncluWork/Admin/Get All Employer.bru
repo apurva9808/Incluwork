@@ -1,0 +1,15 @@
+meta {
+  name: Get All Employer
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:3000/incluwork/employers
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjFjZWM0MTU4ZmM5YmM2M2ViZGM5N2QiLCJpYXQiOjE3MTMxNzI4NTF9.o_CE-nlXYltG_8YdrADVVE-MJkEl9BCGFF6urjbuB2g
+}

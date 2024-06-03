@@ -1,0 +1,21 @@
+meta {
+  name: Update the application status
+  type: http
+  seq: 3
+}
+
+patch {
+  url: http://localhost:3000/incluwork/applications/6624e5cc4f6a226f9fada31a/status
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI0ZTRkM2MxNzY5ODc2YmI1MDJiNDciLCJpYXQiOjE3MTM2OTM5MDd9.0NNxet-CKR6swLWYDnFCGE8jPSPGUopf2tzi4gucR7c
+}
+
+body:json {
+  {
+    "status": "rejected"
+  }
+}

@@ -1,0 +1,37 @@
+meta {
+  name: Add Job
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/incluwork/joblistings
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjFjZWM0MTU4ZmM5YmM2M2ViZGM5N2QiLCJpYXQiOjE3MTMxNzI4NTF9.o_CE-nlXYltG_8YdrADVVE-MJkEl9BCGFF6urjbuB2g
+}
+
+body:json {
+  {
+    "title": "Software Engineer",
+    "employerId": "661cd892c26483980c93a49c",
+    "location": "New York",
+    "jobType": "full-time",
+    "accessibilityFeatures": [
+      "Screen Reading Software",
+      "Magnification Tools"
+    ],
+    "requiredSkills": [
+      "JavaScript",
+      "Node.js",
+      "React"
+    ],
+    "maxPositions": 5,
+    "salary": 80000,
+    "dateOfJoining": "2024-05-01"
+  }
+  
+}

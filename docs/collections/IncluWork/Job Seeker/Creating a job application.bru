@@ -1,0 +1,21 @@
+meta {
+  name: Creating a job application
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:3000/incluwork/jobapplications
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjIxYWZhYTc1MmZlZTI2YTAwZTViNWMiLCJpYXQiOjE3MTM2OTM5NzZ9.-Uh2QMcbzUQMEPuKKfkqfplRetZHVm_sJGQxsWMcgbM
+}
+
+body:json {
+  {
+    "jobId": "6624e506c1769876bb502b4f"
+  }
+}

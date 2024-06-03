@@ -1,0 +1,40 @@
+meta {
+  name: Create job listing
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/incluwork/joblistings
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2MTc2OTQ0MTc4MzRiODU2Y2Y5MGUiLCJpYXQiOjE3MTM3NzI0NDZ9.fMsPmJajWSUhX6urkfRcgwxb07V46BEZlUTntAwK518
+}
+
+body:json {
+  {   
+    "title": "Social Media Manager",  
+    "location": "Boston",   
+    "jobType": "part-time",   
+    "accessibilityFeatures": [
+        "Voice-controlled Technology Devices",
+        "Assistive Aids",
+        "Flexible Work Arrangements",
+        "Voice-controlled Project Management Tools",
+        "Ergonomic Workstation Setup"
+      ],   
+    "requiredSkills": [
+        "Tech Literacy",
+        "Team Collaboration Skills",
+        "Analytical Skills",
+        "Visual Design Skills",
+        "Strategic Thinking Skills"
+      ],   
+    "maxPositions": 5,   
+    "salary": 80000,   
+    "dateOfJoining": "2024-05-01" 
+  }
+}

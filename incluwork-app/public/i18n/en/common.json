@@ -1,0 +1,19 @@
+{
+  "loginPage": {
+    "login": "Login",
+    "email": "Email",
+    "password": "Password",
+    "switchLanguage": "Switch Language",
+    "loginError": "Login Error",
+    "projectOverview": "Project Overview:",
+    "projectDescription": "\"IncluWork\" is an innovative platform aimed at promoting workplace inclusivity and accessibility. Our project focuses on empowering employers and employees alike by providing tools and resources to create inclusive work environments for individuals with diverse needs and abilities.",
+    "keyFeatures": "Key Features:",
+    "featureList": {
+      "accommodationTools": "Accommodation Tools",
+      "employerProfiles": "Employer Profiles",
+      "employeeRegistration": "Employee Registration",
+      "interactiveDashboard": "Interactive Dashboard",
+      "educationalResources": "Educational Resources"
+    }
+  }
+}

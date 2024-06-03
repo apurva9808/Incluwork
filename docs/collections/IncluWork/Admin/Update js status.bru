@@ -1,0 +1,22 @@
+meta {
+  name: Update js status
+  type: http
+  seq: 5
+}
+
+patch {
+  url: http://localhost:3000/incluwork/admin/jobseeker/verify
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI0ODEwMmM2Zjc4MzNlNWE1OWRhZTMiLCJpYXQiOjE3MTM3MjEzNTd9.S4p6EXuEmamfsPxVfka8sEmCsI0enWn6fo1DNBho4MY
+}
+
+body:json {
+  {
+    "JSId":"66254af457b34f6520928bdc",
+    "status":"pending"
+  }
+}

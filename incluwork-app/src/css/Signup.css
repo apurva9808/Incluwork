@@ -1,0 +1,85 @@
+.signup-page {
+    text-align: center;
+}
+
+.signup-options {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup-options button {
+    width: 40%; /* Adjust width as needed */
+    padding: 15px 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.signup-options button.selected {
+    background-color: #3498db; /* Selected background color */
+    color: #fff; /* Text color for selected button */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.button-container > button {
+    width: 15%; /* Adjust the width of buttons */
+}
+
+.button-container > button:first-child {
+    margin-right: 30%; /* Push the first button to the left */
+}
+ .signup-page{
+     margin: 0 auto;
+     width: 50%;
+ }
+ h1{
+     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+ }
+
+.education-fields {
+    display: grid;
+    grid-template-columns: 1fr; /* One column for the first row */
+    grid-template-rows: auto auto; /* Two rows */
+    gap: 16px; /* Adjust space between fields */
+    margin-bottom: 20px; /* Space below the grid */
+}
+
+.course-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Four equal columns */
+    gap: 16px; /* Space between columns */
+}
+
+.Education{
+    text-align: left;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    strong: true;
+    font-size: x-large;
+    margin: 10px 0;
+}
+
+.docs-upload{
+display: flex;
+}
+
+.upload-title{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+.upload-button{
+    display: flex;
+    justify-content: center;
+}
+.upload-button > button{
+    padding: 15px 30px;
+}

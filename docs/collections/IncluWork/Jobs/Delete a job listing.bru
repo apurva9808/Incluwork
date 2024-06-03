@@ -1,0 +1,15 @@
+meta {
+  name: Delete a job listing
+  type: http
+  seq: 5
+}
+
+delete {
+  url: http://localhost:3000/incluwork/joblistings/661f234d7149f5e437645622
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjFmMGFjZDA0ZTgyODRlOGNlZDM5ZTYiLCJpYXQiOjE3MTMzMTA0MTN9.aQl2tHv8enda09BHTZCTtiKy2boLYN5_NLNSw2-_gTE
+}

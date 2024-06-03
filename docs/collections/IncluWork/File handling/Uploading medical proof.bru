@@ -1,0 +1,19 @@
+meta {
+  name: Uploading medical proof
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/incluwork/medicalproof
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjIxYWZhYTc1MmZlZTI2YTAwZTViNWMiLCJpYXQiOjE3MTM2NTc1MzB9.Rx0QnscJ67b85o7nhHFtAlbT493UpBN_n_1ngAU06Kg
+}
+
+body:multipart-form {
+  file: @file(C:\Users\HP\Downloads\Evidence_of_Disability_Filled_Blindness.pdf)
+}
