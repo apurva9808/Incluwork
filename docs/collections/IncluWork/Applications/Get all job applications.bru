@@ -1,0 +1,15 @@
+meta {
+  name: Get all job applications
+  type: http
+  seq: 7
+}
+
+delete {
+  url: http://localhost:3000/incluwork/jobapplications/6620ca779a46c2ced6dc1515
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjIzNDQ1NTVmOWY0N2I1Y2U1NTVjNzgiLCJpYXQiOjE3MTM3NDc4MTh9.mnEF1WMjOHec-NNO9cJk99rT0CkFSa5xoBsphpHHWLg
+}

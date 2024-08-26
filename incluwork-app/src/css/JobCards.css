@@ -1,0 +1,103 @@
+
+.CardContent {
+    padding : 20px;
+    display: flex;
+    flex-direction: column;  /* Aligning content vertically */
+    justify-content: space-around;  /* Distributes spacing evenly */
+}
+.Chip {
+    margin: 4px;  /* Adding space around each chip */
+}
+
+.Typography--margin {
+    margin-bottom: 10px;  /* Adding space below each Typography component */
+}
+
+.Section-spacing {
+    margin-bottom: 20px;  /* Adding more space between sections */
+}
+
+.dialog-title {
+    color: #4CAF50; /* Primary green */
+    text-align: center;
+    font-weight: bold;
+}
+
+.dialog-content {
+    text-align: center;
+    font-size: 16px; /* Medium text size */
+}
+
+.dialog-actions {
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.success-dialog {
+    border-radius: 10px;
+    background-color: #fff; /* White background */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+
+
+/* Job Cards container */
+.job-cards-container {
+    padding: 20px 10%;
+}
+
+/* Centered typography for the title */
+.jobs-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Search box styling */
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+/* Job card styling */
+.job-card {
+    max-width: 800px;
+    margin: auto;
+}
+
+.job-card-content {
+    padding: 20px;
+}
+
+.typography-margin {
+    margin-bottom: 1rem;
+}
+
+.section-spacing {
+    margin-bottom: 1rem;
+}
+
+.chip {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Button box at the bottom of each card */
+.button-box {
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Styles for when a job is applied */
+.applied-chip {
+    background-color: green;
+    color: white;
+    border-radius: 20px;
+}
+
+/* Loading progress style */
+.loading-progress {
+    display: block;
+    margin: auto;
+}

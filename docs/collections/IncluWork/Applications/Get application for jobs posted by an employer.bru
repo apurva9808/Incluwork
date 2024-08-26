@@ -1,0 +1,19 @@
+meta {
+  name: Get application for jobs posted by an employer
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:3000/incluwork/applications
+  body: none
+  auth: bearer
+}
+
+query {
+  ~keywords: Social Media Manager
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2MTc2OTQ0MTc4MzRiODU2Y2Y5MGUiLCJpYXQiOjE3MTM3Nzk5Njh9.Y1uLy_N5vizR04jbsJLI5ln2CXUaap8zCSfEGRFOWSI
+}

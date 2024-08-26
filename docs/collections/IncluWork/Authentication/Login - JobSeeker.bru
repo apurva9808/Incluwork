@@ -1,0 +1,18 @@
+meta {
+  name: Login - JobSeeker
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3000/incluwork/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "jsproper123@example.com",
+    "password": "password123"
+  }
+}

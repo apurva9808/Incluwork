@@ -1,0 +1,15 @@
+meta {
+  name: Get user by userId
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:3000/incluwork/users/661cd9639c57f7e18d3428f0
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI0ZTRkM2MxNzY5ODc2YmI1MDJiNDciLCJpYXQiOjE3MTM2OTM5MDd9.0NNxet-CKR6swLWYDnFCGE8jPSPGUopf2tzi4gucR7c
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Get a Job seeker profile
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:3000/incluwork/jobseekers?id=661f0437a7f4936535102826
+  body: none
+  auth: bearer
+}
+
+query {
+  id: 661f0437a7f4936535102826
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjIxYWZhYTc1MmZlZTI2YTAwZTViNWMiLCJpYXQiOjE3MTM2NTc1MzB9.Rx0QnscJ67b85o7nhHFtAlbT493UpBN_n_1ngAU06Kg
+}

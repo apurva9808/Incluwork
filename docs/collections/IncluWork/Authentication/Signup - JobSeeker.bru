@@ -1,0 +1,37 @@
+meta {
+  name: Signup - JobSeeker
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/incluwork/signup
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "email": "jsproper123@example.com",
+      "name": "Amuthan",
+      "contactNumber": "9234567890",
+      "password": "password123",
+      "type": "jobseeker",
+      "education": [
+        {
+          "institutionName": "University of Example",
+          "courseName": "Masters in Sign Language",
+          "startYear": 2018,
+          "endYear": 2022
+        }
+      ],
+      "skills": [
+        "Problem Solving Skills",
+        "Proficiency in Speech Recognition Software",
+        "Adaptability",
+        "Tech Literacy",
+        "Communication Skills"
+      ],
+      "challenges": "Speech Impairment"
+    }
+}

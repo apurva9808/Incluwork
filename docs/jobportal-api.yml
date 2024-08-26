@@ -1,0 +1,751 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Job Portal API
+  description: >
+    This API provides endpoints for managing job seekers, job applications, employer profiles, and admin functions. It supports creating, viewing, updating, and deleting job seeker profiles, job listings, employer profiles, and reviews. Additionally, it offers admin capabilities to manage user accounts and update job application statuses.
+paths:
+  /jobseekers:
+    get:
+      tags:
+        - Job Seekers
+      summary: Retrieve a  jobseeker profile
+      responses:
+        '200':
+          description: List of jobseekers profiles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/JobseekerProfile'
+        '404':
+          description: Jobseekers not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - Job Seekers
+      summary: Create a jobseeker profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobseekerProfile'
+      responses:
+        '201':
+          description: Profile created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobseekerProfile'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    patch:
+      tags:
+        - Job Seekers
+      summary: Update a jobseeker profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobseekerProfile'
+      responses:
+        '200':
+          description: Profile updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobseekerProfile'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Job Seekers
+      summary: Delete a jobseeker profile
+      responses:
+        '204':
+          description: Profile deleted successfully
+        '404':
+          description: Profile not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /employers:
+    get:
+      tags:
+        - Employers
+      summary: Retrieve an employer profile
+      responses:
+        '200':
+          description: List of employers profiles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployerProfile'
+        '404':
+          description: Employers not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - Employers
+      summary: Create an employer profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployerProfile'
+      responses:
+        '201':
+          description: Profile created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployerProfile'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    patch:
+      tags:
+        - Employers
+      summary: Update an employer profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmployerProfile'
+      responses:
+        '200':
+          description: Profile updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployerProfile'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Employers
+      summary: Delete an employer profile
+      responses:
+        '204':
+          description: Profile deleted successfully
+        '404':
+          description: Profile not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /jobs:
+    get:
+      tags:
+        - Jobs
+      summary: Retrieve all jobs available for jobseekers
+      responses:
+        '200':
+          description: List of available jobs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Job'
+        '404':
+          description: No jobs found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /jobs/{id}:
+    get:
+      tags:
+        - Jobs
+      summary: Retrieve a specific job by ID for jobseekers
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Detailed job information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        '404':
+          description: Job not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /joblistings:
+    get:
+      tags:
+        - Jobs
+      summary: Retrieve all job listings for employers
+      responses:
+        '200':
+          description: List of job listings
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/JobListing'
+        '404':
+          description: No job listings found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - Jobs
+      summary: Create a job listing as an employer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobListing'
+      responses:
+        '201':
+          description: Job listing created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobListing'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    patch:
+      tags:
+        - Jobs
+      summary: Update a job listing as an employer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobListing'
+      responses:
+        '200':
+          description: Job listing updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobListing'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Jobs
+      summary: Delete a job listing as an employer
+      responses:
+        '204':
+          description: Job listing deleted successfully
+        '404':
+          description: Job listing not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /joblistings/{id}:
+    get:
+      tags:
+        - Jobs
+      summary: Retrieve a specific job listing by ID for employers
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Detailed job listing information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobListing'
+        '404':
+          description: Job listing not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /joblistings/{id}/applications:
+    get:
+      tags:
+        - Applications
+      summary: Retrieve applications for a specific job listing as an employer
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: List of applications for the job listing
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Application'
+        '404':
+          description: No applications found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    patch:
+      tags:
+        - Applications
+      summary: Update the status of an application for a specific job as an employer
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  enum: [accepted, rejected, pending]
+      responses:
+        '200':
+          description: Application status updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Application'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /jobapplications:
+    get:
+      tags:
+        - Applications
+      summary: Retrieve all job applications for a jobseeker
+      responses:
+        '200':
+          description: List of job applications
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Application'
+        '404':
+          description: No applications found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - Applications
+      summary: Create a job application as a jobseeker
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Application'
+      responses:
+        '201':
+          description: Application created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Application'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Applications
+      summary: Delete a job application as a jobseeker
+      responses:
+        '204':
+          description: Application deleted successfully
+        '404':
+          description: Application not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /admin/users:
+    get:
+      tags:
+        - Admin
+      summary: Retrieve all users
+      responses:
+        '200':
+          description: List of all users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        '404':
+          description: No users found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /admin/jobs:
+    get:
+      tags:
+        - Admin
+      summary: Retrieve all posted jobs
+      responses:
+        '200':
+          description: List of all posted jobs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/JobListing'
+        '404':
+          description: No jobs found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /admin/jobapplications:
+    get:
+      tags:
+        - Admin
+      summary: Retrieve job applications filtered by status
+      parameters:
+        - in: query
+          name: status
+          required: true
+          schema:
+            type: string
+            enum: [applied,verified,pending,accepted,rejected]
+          description: Status to filter the job applications by
+      responses:
+        '200':
+          description: List of job applications filtered by specified status
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Application'
+        '404':
+          description: No applications found for the specified status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /admin/employers:
+    get:
+      tags:
+        - Admin
+      summary: Retrieve all employers
+      responses:
+        '200':
+          description: List of all employers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployerProfile'
+        '404':
+          description: No employers found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /jobs/{id}/applications/verify:
+    patch:
+      tags:
+        - Admin
+      summary: Admin updates the verification status of an application
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                verified:
+                  type: boolean
+      responses:
+        '200':
+          description: Application verification status updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Application'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /auth/login:
+    post:
+      tags:
+        - Authentication
+      summary: Login for users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /auth/signup:
+    post:
+      tags:
+        - Authentication
+      summary: Signup for new users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+                role:
+                  type: string
+                  enum: [jobseeker, employer, admin]
+      responses:
+        '201':
+          description: Signup successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /ratings:
+    post:
+      tags:
+        - Ratings
+      summary: Post a rating as a jobseeker for a job by ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                job_id:
+                  type: integer
+                rating:
+                  type: integer
+                  minimum: 1
+                  maximum: 5
+      responses:
+        '201':
+          description: Rating posted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Rating'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    get:
+      tags:
+        - Ratings
+      summary: Get ratings for the jobs that an employer posted
+      responses:
+        '200':
+          description: List of ratings for employer's jobs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Rating'
+        '404':
+          description: No ratings found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    JobseekerProfile:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        skills:
+          type: array
+          items:
+            type: string
+    EmployerProfile:
+      type: object
+      properties:
+        id:
+          type: integer
+        company_name:
+          type: string
+        contact_email:
+          type: string
+        industry:
+          type: string
+    Job:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+        location:
+          type: string
+        salary:
+          type: string
+    JobListing:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+        location:
+          type: string
+        salary:
+          type: string
+        is_active:
+          type: boolean
+    Application:
+      type: object
+      properties:
+        id:
+          type: integer
+        job_id:
+          type: integer
+        applicant_id:
+          type: integer
+        status:
+          type: string
+          enum: [applied, verified,pending,accepted, rejected]
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+        role:
+          type: string
+          enum: [jobseeker, employer, admin]
+    Rating:
+      type: object
+      properties:
+        id:
+          type: integer
+        job_id:
+          type: integer
+        rating:
+          type: integer
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
